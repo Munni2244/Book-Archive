@@ -7,6 +7,18 @@
     padding: 15px;
     border: none;
 }
-/* #error{
-    display: none;
-} */
+span{
+    color:rgb(71, 181, 255);
+}
+#button-search{
+    background-color:rgb(71, 181, 255) ;
+    color: rgb(250, 249, 249);
+}
+#span{
+    color: rgb(133, 145, 156);
+    font-style: italic;
+}
+.title{
+    color: rgb(117, 122, 124);
+    font-style:initial;
+}

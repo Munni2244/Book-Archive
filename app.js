@@ -12,11 +12,11 @@ const getInputField=()=>{
     //   // return;
     // }
     container.innerHTML='';
-    fetch(`http://openlibrary.org/search.json?q=${inputValue}`)
+    fetch(`https://openlibrary.org/search.json?q=${inputValue}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      foundResult.innerText=`Total result ${data.numFound}`;
+      foundResult.innerText=`Total result Found: ${data.numFound}`;
       getDisplayValue(data.docs);
     })
    
@@ -40,13 +40,13 @@ const getDisplayValue =(books) =>{
     const div = document.createElement('div');
     div.classList.add('row');
     div.innerHTML=`
-    <div class="col mx-3 my-5 shadow">
+    <div class="col mx-3 my-5 shadow ">
               <div class=" h-100">
                 <img src="https://covers.openlibrary.org/b/id/${book.cover_i?book.cover_i:''}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h1 class="card-title"> ${book.title ? book.title:'Title is not found'} </h1>
-                  <h5 class="card-title"> Author Name: ${book.author_name[0] ? book.author_name[0]:'Name is not found'} </h5>
-                   <p> Published by  ${book.publisher[0] ? book.publisher[0]:'Publisher is not found'},${book.first_publish_year ? book.first_publish_year:'Data year not found'}</p>
+                  <h1 class="card-title"> <span class="title">${book.title ? book.title:'Title is not found</span>'} </h1>
+                  <h5 class="card-title"><span>${book.author_name[0] ? book.author_name[0]:'Name is not found </span>'} </h5>
+                   <p>Published by  <span id="span"> ${book.publisher[0] ? book.publisher[0]:'Publisher is not found'}, ${book.first_publish_year ? book.first_publish_year:'Data year not found</span>'}</p>
                  
                 </div>
               </div>
