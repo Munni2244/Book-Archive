@@ -22,3 +22,7 @@ span{
     color: rgb(117, 122, 124);
     font-style:initial;
 }
+
+#container{
+    margin-left: 50px;
+}
