@@ -6,6 +6,7 @@
 .col img{
     padding: 15px;
     border: none;
+    height: 500px;
 }
 span{
     color:rgb(71, 181, 255);
