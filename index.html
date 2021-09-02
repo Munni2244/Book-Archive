@@ -12,27 +12,30 @@
    
 </head>
 <body class="bg-light">
-    <h1 class=" text-center my-4">Search your favorites <span>Book</span></h1>
-    <!-- input field -->
-        <div class="input-group mb-5 w-50 mx-auto">
-            <input id="inputId" type="text" class="form-control" placeholder="Enter your search massage" aria-label="Recipient's username" aria-describedby="button-search">
-            <button onclick="getInputField()" class="btn btn-outline-secondary ms-2" type="button" id="button-search">Search</button>
-          </div>
+ 
+    <div class="card bg-dark text-white">
+        <!-- background img  -->
+        <img src="images/book2.jpg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h1 class=" text-center my-4">Search your favorites <span>Book</span></h1>
+          <!-- input field -->
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input id="inputId" type="text" class="form-control" placeholder="Enter your search massage" aria-label="Recipient's username" aria-describedby="button-search">
+                <button onclick="getInputField()" class="btn btn-outline-secondary ms-2" type="button" id="button-search">Search</button>
+              </div>
+         <!-- error msg -->
+         <div id="error" class="text-center text-danger fs-5 fw-bold mb-3">
 
-          <!-- error msg -->
-          <!-- <div id="error" class="text-center text-danger">
+        </div>
+        <!--  total result  -->
+        <div id="result" class="text-center fs-4 fw-bold">
 
-          </div> -->
-          <!-- <div id="error2" class="text-center text-danger">
-
-          </div> -->
-
-          <div id="result" class="text-center text-secondary fs-4 fw-medium">
-
-          </div>
-          
+        </div> 
+        </div>
         
-          <!-- cards -->
+      </div>
+    
+          <!-- cards container -->
           <div class="row row-cols-1 row-cols-md-3 g-4" id="container">
     
           </div>

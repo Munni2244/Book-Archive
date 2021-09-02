@@ -1,41 +1,36 @@
-const inputText=document.getElementById('inputId');
-const errorDiv=document.getElementById('error');
-const errorDiv2=document.getElementById('error2');
-const container=document.getElementById('container');
-const foundResult = document.getElementById('result');
+const inputText=document.getElementById('inputId');      //inputId
+const errorDiv=document.getElementById('error');         // error div
+const container=document.getElementById('container');      // card container
+const foundResult = document.getElementById('result');        //total found
+//search input
 const getInputField=()=>{
-   
     const inputValue= inputText.value;
     inputText.value="";
-    // if(inputValue===""){
-    //   errorDiv.innerText="Input Value Cann't be Empty ";
-    //   // return;
-    // }
+    if(inputValue===""){
+      errorDiv.innerText="Please Enter Your Value! ";
+      return;
+    }
+ // clear container//
     container.innerHTML='';
+    //data fetch
     fetch(`https://openlibrary.org/search.json?q=${inputValue}`)
     .then(res => res.json())
     .then(data => {
-      console.log(data)
-      foundResult.innerText=`Total result Found: ${data.numFound}`;
+      foundResult.innerText=`Total result Found: ${data.numFound}`;         //total result found
       getDisplayValue(data.docs);
-    })
-   
+    }) 
 };
 
-// getInputField();
+// call data/////
 const getDisplayValue =(books) =>{
-    console.log(books);
-  
-//       if(!books.numFoundExact){
-//         console.log(errorDiv);
-//         errorDiv2.style.display='block'
-//        errorDiv2.innerText='Request result not found!'
-//     }
-    
-//   else{
-//     errorDiv2.style.display='none';
-// }
+    errorDiv.innerText='';
 
+  //error handling///
+      if(books.length===0){
+       errorDiv.innerText='Request result not found! Please Try Again!'
+    }
+    
+    //append data///////
       books.forEach(book=> {
     const div = document.createElement('div');
     div.classList.add('row');
@@ -54,10 +49,5 @@ const getDisplayValue =(books) =>{
     `
     container.appendChild(div);
    
-    });
-    
-
-
-  
-  
+    }); 
 }
